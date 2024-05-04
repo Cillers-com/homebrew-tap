@@ -3,7 +3,7 @@ class Cillers < Formula
   homepage "https://cillers.com"
   version "0.0.2"
   url "https://github.com/Cillers-com/cillers-cli/archive/refs/tags/v0.0.2.tar.gz"
-  sha256 "8b3dadf444263f88f78c850197f0f19a8bf49bbcec58518eb713d7b933a22d67"
+  sha256 "affb423ebe111ae0a8a71899b9be040e5522293942ea5fbbe949b2a6fb6fd4c5"
 
   def install
     ohai "Current directory: #{Dir.pwd}"
