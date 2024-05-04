@@ -5,7 +5,7 @@ class Cillers < Formula
   sha256 "8b3dadf444263f88f78c850197f0f19a8bf49bbcec58518eb713d7b933a22d67"
 
   def install
-    bin.install "cillers"
+    bin.install "cillers.rb" => "cillers"
   end
 
   test do
