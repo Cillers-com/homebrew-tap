@@ -9,7 +9,7 @@ class Cillers < Formula
     ohai "Current directory: #{Dir.pwd}"
     system "ls", "-la"
 
-    bin.install "cillers-cli-0.0.1/cillers.rb" => "cillers"
+    bin.install "cillers.rb" => "cillers"
   end
 
   test do
