@@ -12,7 +12,7 @@ class Cillers < Formula
   depends_on "docker"
 
   # Cillers runs on Polytope.
-  dependa_on "polytope-cli"
+  depends_on "polytope-cli"
 
   # Insomnia is our preferred API client UI, since it has great support for
   # GraphQL and oAuth. 
