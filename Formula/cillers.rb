@@ -14,13 +14,6 @@ class Cillers < Formula
   # Cillers runs on Polytope.
   depends_on "polytope-cli"
 
-  # OrbStack is much more resource effective than Docker Desktop on macOS.
-  # Cillers may not run well on Docker Desktop on macOS, unless you have a 
-  # powerful laptop.
-  on_macos do
-    depends_on "orbstack"
-  end
-
   def install
     # Install everything into libexec
     libexec.install Dir["*"]
