@@ -14,10 +14,6 @@ class Cillers < Formula
   # Cillers runs on Polytope.
   depends_on "polytope-cli"
 
-  # Insomnia is our preferred API client UI, since it has great support for
-  # GraphQL and oAuth. 
-  depends_on "insomnia"
-
   # OrbStack is much more resource effective than Docker Desktop on macOS.
   # Cillers may not run well on Docker Desktop on macOS, unless you have a 
   # powerful laptop.
