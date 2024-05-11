@@ -1,7 +1,7 @@
 class Cillers < Formula
   desc "The Cillers CLI"
   homepage "https://cillers.com"
-  version "v0.0.8"
+  version "v0.0.10"
 
   @@os = "#{OS.mac? ? 'macos' : 'linux'}"
   @@arch = "#{Hardware::CPU.intel? ? 'amd64' : 'arm64'}"
