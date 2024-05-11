@@ -1,23 +1,22 @@
 class Cillers < Formula
   desc "The Cillers CLI"
   homepage "https://cillers.com"
-  version "v0.0.10"
+  version "v0.0.13"
 
   @@os = "#{OS.mac? ? 'macos' : 'linux'}"
   @@arch = "#{Hardware::CPU.intel? ? 'amd64' : 'arm64'}"
   @@image_variant = "#{@@os}-#{@@arch}"
   @@shasums = {
-    "linux-amd64" => "14cb9377b92a117a6431e7a544b3829cdb5f71439cb7099cc23f96e03d23baf2",
-    "linux-arm64" => "aaa10076c3fa4950516e9c616eeb90b571845a111b9e8482939e5d531c1c73ff",
-    "macos-amd64" => "9ac99553a8046ffe8df9aafebf3392c63655959cf411b2d08902faad0731432f", 
-    "macos-arm64" => "4ddf4a43ae4b51b7ccabcab086eeb21f7f2f39ffe6ae89fea86b5cfda6b298fa"
+    "linux-amd64" => "bbd9a0a3882ef7fda8206b5fa3474b4832613d1a80925151cd1cc28fb130e20b",
+    "linux-arm64" => "509e5333468dd5362fcbf076b88ca8848617dc9990f05e2deb2d3e2d834e7c10",
+    "macos-amd64" => "4d34d6805f8fe99edc1247e637cb34cc966206475569b8f81faa110afe3b5720", 
+    "macos-arm64" => "a180cea385bb82940465c9b4aa15ee6a4db476cc941abe07bfb95e1c409bcb68"
   }
   
   url "https://storage.googleapis.com/cillers-cli/cillers-cli-#{version}-#{@@image_variant}.tar.gz"
   sha256 @@shasums[@@image_variant]
   
   def install
-    puts Dir["cillers-cli-*"].to_s
     bin.install "cillers-cli" => "cillers"
   end
 
