@@ -13,7 +13,7 @@ class Cillers < Formula
     "macos-arm64" => "127550cbdd359a68f02c9b52fd7b8ec29797e04c125f29ebcbd1a0940356797b"
   }
   
-  url "https://storage.googleapis.com/cillers-cli/cillers-cli-v#{version}-#{image_variant}.gz"
+  url "https://storage.googleapis.com/cillers-cli/cillers-cli-#{version}-#{image_variant}.gz"
   sha256 shasums[image_variant]
   
   def install
