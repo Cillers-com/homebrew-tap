@@ -7,13 +7,13 @@ class Cillers < Formula
   @@arch = "#{Hardware::CPU.intel? ? 'amd64' : 'arm64'}"
   @@image_variant = "#{@@os}-#{@@arch}"
   @@shasums = {
-    "linux-amd64" => "6f535e229239bacfe1e17d26c13783c027a29cbb6bc685084e7a2d7dd5f67a01",
-    "linux-arm64" => "a3b459fc609aebf1355073cee21028c5293e16dc1d1c64155be69803ddb047c7",
-    "macos-amd64" => "0b3278c2a28463d06aa720def840da3421bc36718ffb2b2aa92ebf5057630b4c", 
-    "macos-arm64" => "127550cbdd359a68f02c9b52fd7b8ec29797e04c125f29ebcbd1a0940356797b"
+    "linux-amd64" => "14cb9377b92a117a6431e7a544b3829cdb5f71439cb7099cc23f96e03d23baf2",
+    "linux-arm64" => "aaa10076c3fa4950516e9c616eeb90b571845a111b9e8482939e5d531c1c73ff",
+    "macos-amd64" => "9ac99553a8046ffe8df9aafebf3392c63655959cf411b2d08902faad0731432f", 
+    "macos-arm64" => "4ddf4a43ae4b51b7ccabcab086eeb21f7f2f39ffe6ae89fea86b5cfda6b298fa"
   }
   
-  url "https://storage.googleapis.com/cillers-cli/cillers-cli-#{version}-#{@@image_variant}.gz"
+  url "https://storage.googleapis.com/cillers-cli/cillers-cli-#{version}-#{@@image_variant}.tar.gz"
   sha256 @@shasums[@@image_variant]
   
   def install
