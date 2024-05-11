@@ -17,7 +17,8 @@ class Cillers < Formula
   sha256 @@shasums[@@image_variant]
   
   def install
-    bin.install Dir["cillers-cli-*"].first => "cillers"
+    puts Dir["cillers-cli-*"].to_s
+    bin.install "cillers-cli" => "cillers"
   end
 
   test do
