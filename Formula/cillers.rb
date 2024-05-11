@@ -1,38 +1,27 @@
 class Cillers < Formula
   desc "The Cillers CLI"
   homepage "https://cillers.com"
-  version "0.0.3"
-  url "https://github.com/Cillers-com/cillers-cli/archive/refs/tags/v0.0.3.tar.gz"
-  sha256 "f86a5458ed2a95498eddfe53ba5035e1341767b7903d95f6428ff04d129e6d63"
+  version "0.0.8"
 
-  # Git is needed to create a new Cillers system. 
-  depends_on "git"
+  os = "#{OS.mac? ? 'macos' : 'linux'}"
+  arch = "#{Hardware::CPU.intel? ? 'amd64' : 'arm64'}"
+  image_variant = "#{os}-#{arch}"
 
-  # Polytope runs on Docker. 
-  depends_on "docker"
-
-  # Cillers runs on Polytope.
-  depends_on "polytope-cli"
-
-  def install
-    # Install everything into libexec
-    libexec.install Dir["*"]
-
-    # Create a wrapper in the bin directory
-    (bin/"cillers").write_env_script libexec/"cillers.rb", GEM_HOME: Formula["ruby"].opt_libexec/"gem"
-  end
-
-  def caveats
-    <<~EOS
-      This tool depends on polytope-cli, which is available through the polytopelabs tap.
-      Please ensure you have tapped this repository before installing:
- 
-        brew tap polytopelabs/tap
-    EOS
-  end
+  url "https://storage.googleapis.com/cillers-cli/cillers-cli-#{version}-#{image_variant}.gz"
+  sha256 { 
+    "linux-amd64" => "6f535e229239bacfe1e17d26c13783c027a29cbb6bc685084e7a2d7dd5f67a01",
+    "linux-arm64" => "a3b459fc609aebf1355073cee21028c5293e16dc1d1c64155be69803ddb047c7",
+    "macos-amd64" => "0b3278c2a28463d06aa720def840da3421bc36718ffb2b2aa92ebf5057630b4c", 
+    "macos-arm64" => "127550cbdd359a68f02c9b52fd7b8ec29797e04c125f29ebcbd1a0940356797b"
+  }[image_variant] 
   
+  def install
+    bin.install "cillers-cli-#{version}-#{image_variant}" => "cillers"
+  end
+
   test do
     system "#{bin}/cillers", "help"
   end
+
 end
 
