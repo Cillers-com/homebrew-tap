@@ -7,10 +7,10 @@ class Cillers < Formula
   @@arch = "#{Hardware::CPU.intel? ? 'amd64' : 'arm64'}"
   @@image_variant = "#{@@os}-#{@@arch}"
   @@shasums = {
-    "linux-amd64" => "6430b31647d7ff4ccaa3a07bf7e41c7d5b0dd8f6df843ab929d4ec6b461e9f64",
-    "linux-arm64" => "b712f54fa808b546a1f101b4910e069425ac7b4137969560139d5e1864c782b5",
-    "macos-amd64" => "c090b4068b539eb2c5e7e40e974f0bf1ebfb79f54f4d6e245a4c7b917bb7f20f", 
-    "macos-arm64" => "2142658aa22290de7c1db4ac7e3626178d6c26b808584d66e0d94eb8af20a58c"
+    "linux-amd64" => "ed9cb592273097e0cfd1820eba4b1e1f73cdddbcda6bf50f755c81fa5dcf619a",
+    "linux-arm64" => "211d25388f386f461dae63dcb06e884f1b3908176b9f7f740af2cd0ae56175e3",
+    "macos-amd64" => "c3936428116d28a09dd41ac4338c55b3d595cf87411bd56e802e7a6d35fa487d", 
+    "macos-arm64" => "d37d3cdb2a90c19acc92712af293188f062f581e1a8551600d231d8297ae83e1"
   }
   
   url "https://storage.googleapis.com/cillers-cli/cillers-cli-#{version}-#{@@image_variant}.tar.gz"
