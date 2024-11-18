@@ -1,16 +1,16 @@
 class Cillers < Formula
   desc "The Cillers CLI"
   homepage "https://cillers.com"
-  version "v0.2.7"
+  version "v0.3.0"
 
   @@os = "#{OS.mac? ? 'macos' : 'linux'}"
   @@arch = "#{Hardware::CPU.intel? ? 'amd64' : 'arm64'}"
   @@image_variant = "#{@@os}-#{@@arch}"
   @@shasums = {
-    "linux-amd64" => "652ceaaf277ef8159784e817f5bbc0376309cfc335fd4b8ebf46673b3a568ce2",
-    "linux-arm64" => "49c50f69a3137de5a45c0ceccebf4efcfb947c86c15627a5fe2a5a3bad922c4e",
-    "macos-amd64" => "9c85bfb94089e0dab329307a2cf936e59ec99bed9f4a867d9853a8d5a4d9a261", 
-    "macos-arm64" => "9ec2b6837a11cc33b5d4897ed6adc740aeaeee691aa06a739e0c8d3cfba2a166"
+    "linux-amd64" => "495ae5748b814b8072dbc3c987fc54c48abb113239440274669ea34e0770c462",
+    "linux-arm64" => "9a8325ff77e37c351a5b0b6993a2257f1fdf099f9f38db3f1c9229cc744c7438",
+    "macos-amd64" => "39914c2d3c696ec88277fa5cebbdbc66929b41af75e2cb8327a5fa66e9714e10", 
+    "macos-arm64" => "dbf071aaaebb29d23027b52b497d0f592f2f670ba2b5991245c4aecd42d3b5aa"
   }
   
   url "https://storage.googleapis.com/cillers-cli/cillers-cli-#{version}-#{@@image_variant}.tar.gz"
